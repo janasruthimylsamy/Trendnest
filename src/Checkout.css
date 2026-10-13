@@ -1,0 +1,228 @@
+.checkout-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(35, 20, 39, 0.66);
+  backdrop-filter: blur(7px);
+  overflow-y: auto;
+}
+
+.checkout-modal {
+  position: relative;
+  width: 100%;
+  max-width: 570px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 32px;
+  border: 1px solid #eaddec;
+  border-radius: 24px;
+  background: #fffdfb;
+  color: #35223b;
+  box-shadow: 0 24px 90px rgba(24, 10, 29, 0.28);
+}
+
+.checkout-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #f3eaf5;
+  color: #56315f;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.checkout-eyebrow {
+  color: #8c6395;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.checkout-heading h2 {
+  margin: 9px 35px 7px 0;
+  color: #44244d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 4vw, 34px);
+  line-height: 1.15;
+}
+
+.checkout-heading p {
+  margin: 0;
+  color: #807184;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.checkout-order-summary {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 17px;
+  border: 1px solid #eee2ef;
+  border-radius: 15px;
+  background: #faf5fb;
+}
+
+.checkout-order-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: #79677e;
+  font-size: 13px;
+}
+
+.checkout-order-summary strong {
+  color: #482b50;
+  text-align: right;
+}
+
+.checkout-payment-note {
+  padding-top: 12px;
+  border-top: 1px solid #e9dce9;
+}
+
+.checkout-payment-note strong {
+  color: #79538a;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 15px;
+}
+
+.checkout-field {
+  display: grid;
+  gap: 7px;
+}
+
+.checkout-field label {
+  color: #513957;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.checkout-field input,
+.checkout-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #e4d6e6;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #382740;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.checkout-field input:focus,
+.checkout-field textarea:focus {
+  border-color: #9b70a5;
+  box-shadow: 0 0 0 3px rgba(155, 112, 165, 0.12);
+}
+
+.checkout-field textarea {
+  resize: vertical;
+  min-height: 76px;
+}
+
+.checkout-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.checkout-error {
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid #f0caca;
+  border-radius: 10px;
+  background: #fff1f1;
+  color: #a12e40;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.checkout-place-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 3px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: #593365;
+  color: white;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.checkout-place-order:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #70427c;
+}
+
+.checkout-place-order:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.checkout-terms {
+  margin: 0;
+  color: #897b8d;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.checkout-action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 20px;
+}
+
+.checkout-open-button {
+  padding: 13px 21px;
+  border: 0;
+  border-radius: 12px;
+  background: #593365;
+  color: #fff;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.checkout-open-button:hover {
+  background: #70427c;
+}
+
+@media (max-width: 520px) {
+  .checkout-backdrop {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .checkout-modal {
+    max-height: 96vh;
+    padding: 24px 18px;
+    border-radius: 19px;
+  }
+
+  .checkout-two-columns {
+    grid-template-columns: 1fr;
+  }
+}
